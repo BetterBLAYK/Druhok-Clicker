@@ -1,0 +1,10 @@
+let mouse = {left: false, right: false, middle: false, x: 0, y: 0, debug: false};function getMousePos(canvas, evt) {let rect = canvas.getBoundingClientRect();return {x: evt.clientX - rect.left, y: evt.clientY - rect.top}};document.addEventListener('mousemove', function (evt) {let mousePos = getMousePos(canvas, evt);mouse.x = (mousePos.x / realCanvasWidth) * canvas.width;mouse.y = (mousePos.y / realCanvasHeight) * canvas.height}, false);setInterval(function () {if(mouse.debug) console.warn('X' + mouse.x + ' Y' + mouse.y + "; Left: " + mouse.left + ", Right: " + mouse.right + ", Middle: " + mouse.middle)}, 1000);document.addEventListener('mousedown', function (e) {interacted = true;if(e.button === 0) mouse.left = true;if(e.button === 2) mouse.right = true;if(e.button === 1) mouse.middle = true});document.addEventListener('mouseup', function (e) {if(typeof CheckClick == 'function') CheckClick();if(e.button === 0) mouse.left = false;if(e.button === 2) mouse.right = false;if(e.button === 1) mouse.middle = false});document.addEventListener('wheel', function(event) {mouseWheel = event.deltaY;if (mouseWheel > 0) {if(typeof CheckScroll == 'function') CheckScroll("down")} else if (mouseWheel < 0) {if(typeof CheckScroll == 'function') CheckScroll("up")}}); let keyboard=[];keyboard["shift"]=!1;document.addEventListener('keydown',function(event){interacted=!0;keyboard[event.key.toLowerCase()]=!0;if(typeof CheckKeys=='function')CheckKeys()});document.addEventListener('keyup',function(event){keyboard[event.key.toLowerCase()]=!1;if(typeof CheckKeys=='function')CheckKeys()});
+
+// The resize.quax file must be included for this to work
+// Create functions CheckClick(), CheckScroll(direction), CheckKeys()
+// Access the keyboard property by keyboard[key]
+// Access mouse properties in mouse
+
+document.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+}, { passive: false });

@@ -1,0 +1,9 @@
+const season = -999
+let ismobile = /Mobi|Android/i.test(navigator.userAgent)
+let autosave = true
+const canvas = document.createElement("canvas")
+canvas.id = "canvas"
+canvas.width = 1080; canvas.height = 1920
+document.body.appendChild(canvas)
+const ctx = canvas.getContext("2d")
+const saveName = "QUAXDruhokClicker" + season

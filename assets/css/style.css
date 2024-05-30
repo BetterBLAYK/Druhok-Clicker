@@ -1,0 +1,28 @@
+* {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #080808;
+    
+    /* For WebKit (Chrome, Safari, etc.) and Blink (Opera) */
+    -webkit-tap-highlight-color: transparent;
+
+    /* For Firefox */
+    -moz-tap-highlight-color: transparent;
+
+    /* For Edge */
+    -ms-tap-highlight-color: transparent;
+
+    /* Standard */
+    -tap-highlight-color: transparent;
+}
+
+#canvas{
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+}

@@ -1,0 +1,16 @@
+let SC0 = () => {
+    ctx.save()
+    ctx.translate(-druhok.width * .5, -druhok.height * .5);
+    ctx.drawImage(druhok0, druhok.position.x, druhok.position.y, druhok.width, druhok.height)
+    ctx.restore()
+
+    ctx.font = "50pt Jersey25"
+    ctx.fillStyle = "#DDD"
+    ctx.textAlign = "center"
+    ctx.textBaseline = "top"
+    ctx.fillText(~~score + " Druhoků", canvas.width / 2, 3e2)
+
+    ctx.font = "30pt Jersey25"
+    ctx.fillText(~~earnPerSec + " Druhoků/s", canvas.width / 2, 370)
+
+}

@@ -1,0 +1,2 @@
+let l=performance.now(),deltaTime=0;function UpdateDeltaTime(){let c=performance.now();deltaTime=(c-l)/1e3;l=c;}
+let FPS=0,UpdateFPS=()=>{FPS++; setTimeout(function(){FPS--},1e3)};

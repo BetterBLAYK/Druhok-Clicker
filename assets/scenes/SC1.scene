@@ -1,0 +1,39 @@
+let SP0 = () => {
+    ctx.fillStyle = "#444"
+    ctx.fillRect(140, 100, 800, 250)
+    ctx.fillRect(140, 400, 800, 250)
+
+
+    ctx.fillStyle = "#DDD"
+
+    ctx.font = "75pt Jersey25"
+    ctx.textBaseline = "top"
+    ctx.textAlign = "center"
+    ctx.fillText("MiniAsk s KRIdamou", 540, 100, 800)
+    ctx.fillText("Druhok Subs", 540, 400, 800)
+
+    ctx.font = "50pt Jersey25"
+
+    ctx.textAlign = "left"
+    ctx.fillText("Cena: " + Math.ceil(askKRIdama.cost) + " Druhoků", 150, 200, 620)
+    ctx.fillText("+5 Druhoků/s", 150, 280, 620)
+
+    ctx.fillText("Cena: " + Math.ceil(buySubs.cost) + " Druhoků", 150, 500, 620)
+    ctx.fillText("2x více druhoků/kliknutí", 150, 580, 620)
+
+
+
+    ctx.font = "100pt Jersey25"
+    ctx.textAlign = "right"
+    ctx.textBaseline = "middle"
+    ctx.fillText(askKRIdama.amount, 910, 275, 100)
+    ctx.fillText(buySubs.amount, 910, 575, 100)
+
+
+}
+
+let SC1 = () => {
+    switch(shopPage){
+        case 0: SP0(); break
+    }
+}
